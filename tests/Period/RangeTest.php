@@ -51,11 +51,10 @@ class RangeTest extends TestCase
         }
     }
 
-    /**
-     * @expectedException \CalendR\Period\Exception\NotImplemented
-     */
     public function testGetDateInterval()
     {
+        $this->expectException(\CalendR\Period\Exception\NotImplemented::class);
+
         Range::getDateInterval();
     }
 }

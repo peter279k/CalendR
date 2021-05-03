@@ -60,10 +60,11 @@ class SecondTest extends TestCase
 
     /**
      * @dataProvider providerConstructInvalid
-     * @expectedException \CalendR\Period\Exception\NotASecond
      */
     public function testConstructInvalid($start)
     {
+        $this->expectException(\CalendR\Period\Exception\NotASecond::class);
+
         new Second($start, $this->prophesize(FactoryInterface::class)->reveal());
     }
 

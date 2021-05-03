@@ -32,7 +32,7 @@ class EventRepositoryTest extends TestCase
      */
     protected $qb;
 
-    public function setUp()
+    protected function setUp(): void
     {
         $this->em            = $this->getMockBuilder(EntityManagerInterface::class)->getMock();
         $this->classMetadata = $this->getMockBuilder(ClassMetadata::class)->disableOriginalConstructor()->getMock();
