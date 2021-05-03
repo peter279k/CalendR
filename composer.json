@@ -2,15 +2,15 @@
     "name": "peter279k/fork-calendr",
     "description": "Object Oriented calendar management",
     "keywords": ["date", "calendar", "events"],
-    "homepage": "https://github.com/yohang/CalendR",
+    "homepage": "https://github.com/peter279k/fork-CalendR",
     "type": "library",
     "license": "MIT",
 
     "authors": [
         {
-            "name": "Yohan GIARELLI",
-            "email": "yohan@giarel.li",
-            "homepage": "http://yohan.giarel.li"
+            "name": "Chung-Sheng, Li",
+            "email": "peter279k@gmail.com",
+            "homepage": "https://peterli.website"
         }
     ],
 
