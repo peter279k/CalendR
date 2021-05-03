@@ -48,10 +48,11 @@ class MinuteTest extends TestCase
 
     /**
      * @dataProvider providerConstructInvalid
-     * @expectedException \CalendR\Period\Exception\NotAMinute
      */
     public function testConstructInvalid($start)
     {
+        $this->expectException(\CalendR\Period\Exception\NotAMinute::class);
+
         new Minute($start, $this->prophesize(FactoryInterface::class)->reveal());
     }
 

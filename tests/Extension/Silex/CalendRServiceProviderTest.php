@@ -21,7 +21,7 @@ class CalendRServiceProviderTest extends TestCase
      */
     protected $provider;
 
-    public function setUp()
+    protected function setUp(): void
     {
         $this->app = new Application();
         $this->provider = new CalendRServiceProvider();

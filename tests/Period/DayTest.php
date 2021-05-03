@@ -30,10 +30,11 @@ class DayTest extends TestCase
 
     /**
      * @dataProvider providerConstructInvalid
-     * @expectedException \CalendR\Period\Exception\NotADay
      */
     public function testConstructInvalid($start)
     {
+        $this->expectException(\CalendR\Period\Exception\NotADay::class);
+
         new Day($start, $this->prophesize(FactoryInterface::class)->reveal());
     }
 

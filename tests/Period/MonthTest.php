@@ -80,10 +80,11 @@ class MonthTest extends TestCase
 
     /**
      * @dataProvider providerConstructInvalid
-     * @expectedException \CalendR\Period\Exception\NotAMonth
      */
     public function testConstructInvalid($start)
     {
+        $this->expectException(\CalendR\Period\Exception\NotAMonth::class);
+
         new Month($start, $this->prophesize(FactoryInterface::class)->reveal());
     }
 

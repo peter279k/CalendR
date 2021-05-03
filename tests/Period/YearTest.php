@@ -66,10 +66,11 @@ class YearTest extends TestCase
 
     /**
      * @dataProvider providerConstructInvalid
-     * @expectedException \CalendR\Period\Exception\NotAYear
      */
     public function testConstructInvalid($start)
     {
+        $this->expectException(\CalendR\Period\Exception\NotAYear::class);
+
         new Year($start, $this->prophesize(FactoryInterface::class)->reveal());
     }
 

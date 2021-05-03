@@ -24,7 +24,7 @@ class CalendRExtensionTest extends TestCase
      */
     protected $calendar;
 
-    protected function setUp()
+    protected function setUp(): void
     {
         $this->calendar = $this->getMockBuilder(Calendar::class)->getMock();
         $this->object   = new CalendRExtension($this->calendar);
