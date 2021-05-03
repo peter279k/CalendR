@@ -1,6 +1,6 @@
 # CalendR
 
-[![Build Status](https://travis-ci.org/yohang/CalendR.svg?branch=1.1)](https://travis-ci.org/yohang/CalendR)
+[![build](https://github.com/peter279k/fork-CalendR/actions/workflows/build.yml/badge.svg)](https://github.com/peter279k/fork-CalendR/actions/workflows/build.yml)
 
 CalendR is an Object Oriented Calendar management library on top of PHP5.3+ Date objects.
 You can use it to deal with all your needs about calendars and events.
@@ -20,7 +20,7 @@ Create a composer.json file
 ```json
     {
         "require": {
-            "yohang/calendr": "^1.1"
+            "peter279k/fork-calendr": "^3.0"
         }
     }
 ```
