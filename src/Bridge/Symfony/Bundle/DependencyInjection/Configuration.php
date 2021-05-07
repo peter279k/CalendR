@@ -10,8 +10,8 @@ class Configuration implements ConfigurationInterface
 {
     public function getConfigTreeBuilder()
     {
-        $builder = new TreeBuilder();
-        $root    = $builder->root('calendr');
+        $builder = new TreeBuilder('calendr');
+        $root    = $builder->getRootNode();
 
         $root
             ->children()
