@@ -2,7 +2,7 @@
 
 [![build](https://github.com/peter279k/fork-CalendR/actions/workflows/build.yml/badge.svg)](https://github.com/peter279k/fork-CalendR/actions/workflows/build.yml)
 
-CalendR is an Object Oriented Calendar management library on top of PHP5.3+ Date objects.
+CalendR is an Object Oriented Calendar management library on top of PHP7.3+ Date objects.
 You can use it to deal with all your needs about calendars and events.
 
 Complete documentation
