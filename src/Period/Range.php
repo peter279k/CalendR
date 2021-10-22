@@ -19,11 +19,11 @@ namespace CalendR\Period;
 class Range extends PeriodAbstract
 {
     /**
-     * @param \DateTime        $begin
-     * @param \DateTime        $end
-     * @param FactoryInterface $factory
+     * @param \DateTimeInterface $begin
+     * @param \DateTimeInterface $end
+     * @param FactoryInterface   $factory
      */
-    public function __construct(\DateTime $begin, \DateTime $end, $factory = null)
+    public function __construct(\DateTimeInterface $begin, \DateTimeInterface $end, $factory = null)
     {
         $this->factory = $factory;
         $this->begin   = clone $begin;
@@ -31,17 +31,17 @@ class Range extends PeriodAbstract
     }
 
     /**
-     * @param \DateTime $start
+     * @param \DateTimeInterface $start
      *
      * @return bool
      */
-    public static function isValid(\DateTime $start)
+    public static function isValid(\DateTimeInterface $start)
     {
         return true;
     }
 
     /**
-     * @return Day
+     * @return Range
      */
     public function getNext()
     {
@@ -55,7 +55,7 @@ class Range extends PeriodAbstract
     }
 
     /**
-     * @return Day
+     * @return Range
      */
     public function getPrevious()
     {

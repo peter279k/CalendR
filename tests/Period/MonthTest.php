@@ -7,9 +7,12 @@ use CalendR\Period\Factory;
 use CalendR\Period\FactoryInterface;
 use CalendR\Period\Month;
 use PHPUnit\Framework\TestCase;
+use Prophecy\PhpUnit\ProphecyTrait;
 
 class MonthTest extends TestCase
 {
+    use ProphecyTrait;
+
     public static function providerConstructInvalid()
     {
         return array(

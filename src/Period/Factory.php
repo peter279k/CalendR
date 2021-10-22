@@ -43,7 +43,7 @@ class Factory implements FactoryInterface
     /**
      * {@inheritdoc}
      */
-    public function createSecond(\DateTime $begin)
+    public function createSecond(\DateTimeInterface $begin)
     {
         return new $this->options['second_class']($begin, $this);
     }
@@ -51,7 +51,7 @@ class Factory implements FactoryInterface
     /**
      * {@inheritdoc}
      */
-    public function createMinute(\DateTime $begin)
+    public function createMinute(\DateTimeInterface $begin)
     {
         return new $this->options['minute_class']($begin, $this);
     }
@@ -59,7 +59,7 @@ class Factory implements FactoryInterface
     /**
      * {@inheritdoc}
      */
-    public function createHour(\DateTime $begin)
+    public function createHour(\DateTimeInterface $begin)
     {
         return new $this->options['hour_class']($begin, $this);
     }
@@ -67,7 +67,7 @@ class Factory implements FactoryInterface
     /**
      * {@inheritdoc}
      */
-    public function createDay(\DateTime $begin)
+    public function createDay(\DateTimeInterface $begin)
     {
         return new $this->options['day_class']($begin, $this);
     }
@@ -75,7 +75,7 @@ class Factory implements FactoryInterface
     /**
      * {@inheritdoc}
      */
-    public function createWeek(\DateTime $begin)
+    public function createWeek(\DateTimeInterface $begin)
     {
         return new $this->options['week_class']($begin, $this);
     }
@@ -83,7 +83,7 @@ class Factory implements FactoryInterface
     /**
      * {@inheritdoc}
      */
-    public function createMonth(\DateTime $begin)
+    public function createMonth(\DateTimeInterface $begin)
     {
         return new $this->options['month_class']($begin, $this);
     }
@@ -91,7 +91,7 @@ class Factory implements FactoryInterface
     /**
      * {@inheritdoc}
      */
-    public function createYear(\DateTime $begin)
+    public function createYear(\DateTimeInterface $begin)
     {
         return new $this->options['year_class']($begin, $this);
     }
@@ -99,7 +99,7 @@ class Factory implements FactoryInterface
     /**
      * {@inheritdoc}
      */
-    public function createRange(\DateTime $begin, \DateTime $end)
+    public function createRange(\DateTimeInterface $begin, \DateTimeInterface $end)
     {
         return new $this->options['range_class']($begin, $end, $this);
     }

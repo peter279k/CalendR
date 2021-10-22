@@ -20,11 +20,11 @@ class Second extends PeriodAbstract
     }
 
     /**
-     * @param \DateTime $start
+     * @param \DateTimeInterface $start
      *
      * @return bool
      */
-    public static function isValid(\DateTime $start)
+    public static function isValid(\DateTimeInterface $start)
     {
         return $start->format('u') === '000000';
     }

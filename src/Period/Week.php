@@ -33,11 +33,11 @@ class Week extends PeriodAbstract implements \Iterator
     }
 
     /**
-     * @param \DateTime $start
+     * @param \DateTimeInterface $start
      *
      * @return bool
      */
-    public static function isValid(\DateTime $start)
+    public static function isValid(\DateTimeInterface $start)
     {
         if ($start->format('H:i:s') !== '00:00:00') {
             return false;

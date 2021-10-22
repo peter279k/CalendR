@@ -25,11 +25,11 @@ class Year extends PeriodAbstract implements \Iterator
     }
 
     /**
-     * @param \DateTime $start
+     * @param \DateTimeInterface $start
      *
      * @return bool
      */
-    public static function isValid(\DateTime $start)
+    public static function isValid(\DateTimeInterface $start)
     {
         return $start->format('d-m H:i:s') === '01-01 00:00:00';
     }

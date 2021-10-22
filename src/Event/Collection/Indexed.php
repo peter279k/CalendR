@@ -36,11 +36,11 @@ class Indexed implements CollectionInterface
 
     /**
      * The function used to index events.
-     * Takes a \DateTime in parameter and must return an array index for this value.
+     * Takes a \DateTimeInterface in parameter and must return an array index for this value.
      *
      * By default :
      * ```php
-     *  function(\DateTime $dateTime) {
+     *  function(\DateTimeInterface $dateTime) {
      *      return $dateTime->format('Y-m-d');
      *  }
      * ```
@@ -58,7 +58,7 @@ class Indexed implements CollectionInterface
         if (is_callable($callable)) {
             $this->indexFunction = $callable;
         } else {
-            $this->indexFunction = function (\DateTime $dateTime) {
+            $this->indexFunction = function (\DateTimeInterface $dateTime) {
                 return $dateTime->format('Y-m-d');
             };
         }
@@ -127,7 +127,7 @@ class Indexed implements CollectionInterface
         if ($index instanceof PeriodInterface) {
             $index = $index->getBegin();
         }
-        if ($index instanceof \DateTime) {
+        if ($index instanceof \DateTimeInterface) {
             $index = $this->computeIndex($index);
         }
 
@@ -153,7 +153,7 @@ class Indexed implements CollectionInterface
     /**
      * Computes event index.
      *
-     * @param EventInterface|\DateTime $toCompute
+     * @param EventInterface|\DateTimeInterface $toCompute
      *
      * @return string
      */

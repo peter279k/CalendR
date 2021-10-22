@@ -60,7 +60,7 @@ class Calendar
      */
     public function getYear($yearOrStart)
     {
-        if (!$yearOrStart instanceof \DateTime) {
+        if (!$yearOrStart instanceof \DateTimeInterface) {
             $yearOrStart = new \DateTime(sprintf('%s-01-01', $yearOrStart));
         }
 
@@ -68,14 +68,14 @@ class Calendar
     }
 
     /**
-     * @param \DateTime|int $yearOrStart year if month is filled, month begin datetime otherwise
-     * @param null|int      $month       number (1~12)
+     * @param \DateTimeInterface|int $yearOrStart year if month is filled, month begin datetime otherwise
+     * @param null|int               $month       number (1~12)
      *
      * @return PeriodInterface
      */
     public function getMonth($yearOrStart, $month = null)
     {
-        if (!$yearOrStart instanceof \DateTime) {
+        if (!$yearOrStart instanceof \DateTimeInterface) {
             $yearOrStart = new \DateTime(sprintf('%s-%s-01', $yearOrStart, $month));
         }
 
@@ -83,8 +83,8 @@ class Calendar
     }
 
     /**
-     * @param \DateTime|int $yearOrStart
-     * @param null|int      $week
+     * @param \DateTimeInterface|int $yearOrStart
+     * @param null|int               $week
      *
      * @return PeriodInterface
      */
@@ -92,7 +92,7 @@ class Calendar
     {
         $factory = $this->getFactory();
 
-        if (!$yearOrStart instanceof \DateTime) {
+        if (!$yearOrStart instanceof \DateTimeInterface) {
             $yearOrStart = new \DateTime(sprintf('%s-W%s', $yearOrStart, str_pad($week, 2, 0, STR_PAD_LEFT)));
         }
 
@@ -100,15 +100,15 @@ class Calendar
     }
 
     /**
-     * @param \DateTime|int $yearOrStart
-     * @param null|int      $month
-     * @param null|int      $day
+     * @param \DateTimeInterface|int $yearOrStart
+     * @param null|int               $month
+     * @param null|int               $day
      *
      * @return PeriodInterface
      */
     public function getDay($yearOrStart, $month = null, $day = null)
     {
-        if (!$yearOrStart instanceof \DateTime) {
+        if (!$yearOrStart instanceof \DateTimeInterface) {
             $yearOrStart = new \DateTime(sprintf('%s-%s-%s', $yearOrStart, $month, $day));
         }
 
@@ -116,15 +116,15 @@ class Calendar
     }
 
     /**
-     * @param \DateTime|int $yearOrStart
-     * @param null|int      $month
-     * @param null|int      $day
+     * @param \DateTimeInterface|int $yearOrStart
+     * @param null|int               $month
+     * @param null|int               $day
      *
      * @return PeriodInterface
      */
     public function getHour($yearOrStart, $month = null, $day = null, $hour = null)
     {
-        if (!$yearOrStart instanceof \DateTime) {
+        if (!$yearOrStart instanceof \DateTimeInterface) {
             $yearOrStart = new \DateTime(sprintf('%s-%s-%s %s:00', $yearOrStart, $month, $day, $hour));
         }
 
@@ -132,15 +132,15 @@ class Calendar
     }
 
     /**
-     * @param \DateTime|int $yearOrStart
-     * @param null|int      $month
-     * @param null|int      $day
+     * @param \DateTimeInterface|int $yearOrStart
+     * @param null|int               $month
+     * @param null|int               $day
      *
      * @return PeriodInterface
      */
     public function getMinute($yearOrStart, $month = null, $day = null, $hour = null, $minute = null)
     {
-        if (!$yearOrStart instanceof \DateTime) {
+        if (!$yearOrStart instanceof \DateTimeInterface) {
             $yearOrStart = new \DateTime(sprintf('%s-%s-%s %s:%s', $yearOrStart, $month, $day, $hour, $minute));
         }
 
@@ -148,15 +148,15 @@ class Calendar
     }
 
     /**
-     * @param \DateTime|int $yearOrStart
-     * @param null|int      $month
-     * @param null|int      $day
+     * @param \DateTimeInterface|int $yearOrStart
+     * @param null|int               $month
+     * @param null|int               $day
      *
      * @return PeriodInterface
      */
     public function getSecond($yearOrStart, $month = null, $day = null, $hour = null, $minute = null, $second = null)
     {
-        if (!$yearOrStart instanceof \DateTime) {
+        if (!$yearOrStart instanceof \DateTimeInterface) {
             $yearOrStart = new \DateTime(
                 sprintf('%s-%s-%s %s:%s:%s', $yearOrStart, $month, $day, $hour, $minute, $second)
             );

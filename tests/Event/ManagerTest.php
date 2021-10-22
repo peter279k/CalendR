@@ -9,6 +9,7 @@ use CalendR\Period\FactoryInterface;
 use CalendR\Period\Month;
 use CalendR\Event\Provider\Basic;
 use PHPUnit\Framework\TestCase;
+use Prophecy\PhpUnit\ProphecyTrait;
 
 /**
  * Test class for Manager.
@@ -16,6 +17,8 @@ use PHPUnit\Framework\TestCase;
  */
 class ManagerTest extends TestCase
 {
+    use ProphecyTrait;
+
     /**
      * @var Manager
      */

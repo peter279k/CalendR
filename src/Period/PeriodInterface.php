@@ -23,23 +23,23 @@ interface PeriodInterface
     /**
      * Checks if the given period is contained in the current period.
      *
-     * @param \DateTime $date
+     * @param \DateTimeInterface $date
      *
      * @return bool true if the period contains this date
      */
-    public function contains(\DateTime $date);
+    public function contains(\DateTimeInterface $date);
 
     /**
      * Gets the DateTime of period begin.
      *
-     * @return \DateTime
+     * @return \DateTimeInterface
      */
     public function getBegin();
 
     /**
      * Gets the DateTime of the period end.
      *
-     * @return \DateTime
+     * @return \DateTimeInterface
      */
     public function getEnd();
 
@@ -115,9 +115,9 @@ interface PeriodInterface
     /**
      * Checks if $start is good for building the period.
      *
-     * @param \DateTime $start
+     * @param \DateTimeInterface $start
      */
-    public static function isValid(\DateTime $start);
+    public static function isValid(\DateTimeInterface $start);
 
     /**
      * Returns a \DateInterval equivalent to the period.

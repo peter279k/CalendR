@@ -23,11 +23,11 @@ abstract class AbstractEvent implements EventInterface
     /**
      * Check if the given date is during the event.
      *
-     * @param \DateTime $datetime
+     * @param \DateTimeInterface $datetime
      *
      * @return bool true if $datetime is during the event, false otherwise
      */
-    public function contains(\DateTime $datetime)
+    public function contains(\DateTimeInterface $datetime)
     {
         return $this->getBegin() <= $datetime && $datetime < $this->getEnd();
     }

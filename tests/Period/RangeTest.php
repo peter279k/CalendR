@@ -5,9 +5,12 @@ namespace CalendR\Test\Period;
 use CalendR\Period\FactoryInterface;
 use CalendR\Period\Range;
 use PHPUnit\Framework\TestCase;
+use Prophecy\PhpUnit\ProphecyTrait;
 
 class RangeTest extends TestCase
 {
+    use ProphecyTrait;
+
     public static function providerContains()
     {
         return array(

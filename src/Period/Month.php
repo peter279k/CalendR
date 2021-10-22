@@ -43,7 +43,7 @@ class Month extends PeriodAbstract implements \Iterator
      * Returns the first day of the first week of month.
      * First day of week is configurable via {@link Factory:setOption()}.
      *
-     * @return \DateTime
+     * @return \DateTimeInterface
      */
     public function getFirstDayOfFirstWeek()
     {
@@ -65,7 +65,7 @@ class Month extends PeriodAbstract implements \Iterator
      * Returns the last day of last week of month
      * First day of week is configurable via {@link Factory::setOption()}.
      *
-     * @return \DateTime
+     * @return \DateTimeInterface
      */
     public function getLastDayOfLastWeek()
     {
@@ -139,11 +139,11 @@ class Month extends PeriodAbstract implements \Iterator
     }
 
     /**
-     * @param \DateTime $start
+     * @param \DateTimeInterface $start
      *
      * @return bool
      */
-    public static function isValid(\DateTime $start)
+    public static function isValid(\DateTimeInterface $start)
     {
         return $start->format('d H:i:s') === '01 00:00:00';
     }

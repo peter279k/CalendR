@@ -20,13 +20,13 @@ namespace CalendR\Bridge\Doctrine\ORM;
 trait EventRepository
 {
     /**
-     * @param \DateTime $begin
-     * @param \DateTime $end
-     * @param array     $options
+     * @param \DateTimeInterface $begin
+     * @param \DateTimeInterface $end
+     * @param array              $options
      *
      * @return \Doctrine\ORM\QueryBuilder
      */
-    public function getEventsQueryBuilder(\DateTime $begin, \DateTime $end, array $options = array())
+    public function getEventsQueryBuilder(\DateTimeInterface $begin, \DateTimeInterface $end, array $options = array())
     {
         $begin = sprintf("'%s'", $begin->format('Y-m-d H:i:s'));
         $end   = sprintf("'%s'", $end->format('Y-m-d H:i:s'));
@@ -61,25 +61,25 @@ trait EventRepository
     }
 
     /**
-     * @param \DateTime $begin
-     * @param \DateTime $end
-     * @param array     $options
+     * @param \DateTimeInterface $begin
+     * @param \DateTimeInterface $end
+     * @param array              $options
      *
      * @return \Doctrine\ORM\Query
      */
-    public function getEventsQuery(\DateTime $begin, \DateTime $end, array $options = array())
+    public function getEventsQuery(\DateTimeInterface $begin, \DateTimeInterface $end, array $options = array())
     {
         return $this->getEventsQueryBuilder($begin, $end, $options)->getQuery();
     }
 
     /**
-     * @param \DateTime $begin
-     * @param \DateTime $end
-     * @param array     $options
+     * @param \DateTimeInterface $begin
+     * @param \DateTimeInterface $end
+     * @param array              $options
      *
      * @return array<\CalendR\Event\EventInterface>
      */
-    public function getEvents(\DateTime $begin, \DateTime $end, array $options = array())
+    public function getEvents(\DateTimeInterface $begin, \DateTimeInterface $end, array $options = array())
     {
         return $this->getEventsQuery($begin, $end, $options)->getResult();
     }
