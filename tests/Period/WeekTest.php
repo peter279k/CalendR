@@ -6,9 +6,12 @@ use CalendR\Period\Factory;
 use CalendR\Period\FactoryInterface;
 use CalendR\Period\Week;
 use PHPUnit\Framework\TestCase;
+use Prophecy\PhpUnit\ProphecyTrait;
 
 class WeekTest extends TestCase
 {
+    use ProphecyTrait;
+
     public static function providerConstructValid()
     {
         return array(

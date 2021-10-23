@@ -25,7 +25,7 @@ class EventProviderPassTest extends TestCase
     public function testProcess()
     {
         $eventManagerDefinition = $this->getMockBuilder(Definition::class)->getMock();
-        $containerBuilder = $this->getMockBuilder(ContainerBuilder::class)->setMethods(['findTaggedServiceIds', 'getDefinition'])->getMock();
+        $containerBuilder = $this->getMockBuilder(ContainerBuilder::class)->onlyMethods(['findTaggedServiceIds', 'getDefinition'])->getMock();
         $containerBuilder->expects($this->once())->method('getDefinition')->with(Manager::class)->willReturn($eventManagerDefinition);
         $containerBuilder
             ->expects($this->once())
@@ -36,8 +36,10 @@ class EventProviderPassTest extends TestCase
                 'service2' => [['alias' => 'service2_alias']]
             ]);
 
-        $eventManagerDefinition->expects($this->at(0))->method('addMethodCall')->with('addProvider', ['service1', new Reference('service1')]);
-        $eventManagerDefinition->expects($this->at(1))->method('addMethodCall')->with('addProvider', ['service2_alias', new Reference('service2')]);
+        $eventManagerDefinition->expects($this->exactly(2))->method('addMethodCall')->withConsecutive(
+            ['addProvider', ['service1', new Reference('service1')]],
+            ['addProvider', ['service2_alias', new Reference('service2')]],
+        );
 
         $pass = new EventProviderPass;
         $pass->process($containerBuilder);

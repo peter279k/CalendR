@@ -36,7 +36,7 @@ interface EventInterface
      *
      * @abstract
      *
-     * @return \DateTime event begin
+     * @return \DateTimeInterface event begin
      */
     public function getBegin();
 
@@ -45,7 +45,7 @@ interface EventInterface
      *
      * @abstract
      *
-     * @return \DateTime event end
+     * @return \DateTimeInterface event end
      */
     public function getEnd();
 
@@ -54,11 +54,11 @@ interface EventInterface
      *
      * @abstract
      *
-     * @param \DateTime $datetime
+     * @param \DateTimeInterface $datetime
      *
      * @return bool true if $datetime is during the event, false otherwise
      */
-    public function contains(\DateTime $datetime);
+    public function contains(\DateTimeInterface $datetime);
 
     /**
      * Check if the given period is during the event.

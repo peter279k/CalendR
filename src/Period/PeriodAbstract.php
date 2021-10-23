@@ -21,12 +21,12 @@ use CalendR\Event\EventInterface;
 abstract class PeriodAbstract implements PeriodInterface
 {
     /**
-     * @var \DateTime
+     * @var \DateTimeInterface
      */
     protected $begin;
 
     /**
-     * @var \DateTime
+     * @var \DateTimeInterface
      */
     protected $end;
 
@@ -36,12 +36,12 @@ abstract class PeriodAbstract implements PeriodInterface
     protected $factory;
 
     /**
-     * @param \DateTime        $begin
-     * @param FactoryInterface $factory
+     * @param \DateTimeInterface $begin
+     * @param FactoryInterface   $factory
      *
      * @throws \CalendR\Exception
      */
-    public function __construct(\DateTime $begin, FactoryInterface $factory)
+    public function __construct(\DateTimeInterface $begin, FactoryInterface $factory)
     {
         $this->factory = $factory;
         if (!static::isValid($begin)) {
@@ -56,11 +56,11 @@ abstract class PeriodAbstract implements PeriodInterface
     /**
      * Checks if the given period is contained in the current period.
      *
-     * @param \DateTime $date
+     * @param \DateTimeInterface $date
      *
      * @return bool true if the period contains this date
      */
-    public function contains(\DateTime $date)
+    public function contains(\DateTimeInterface $date)
     {
         return $this->begin <= $date && $date < $this->end;
     }
@@ -171,7 +171,7 @@ abstract class PeriodAbstract implements PeriodInterface
     }
 
     /**
-     * @return \DateTime
+     * @return \DateTimeInterface
      */
     public function getBegin()
     {
@@ -179,7 +179,7 @@ abstract class PeriodAbstract implements PeriodInterface
     }
 
     /**
-     * @return \DateTime
+     * @return \DateTimeInterface
      */
     public function getEnd()
     {

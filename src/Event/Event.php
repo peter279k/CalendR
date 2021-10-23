@@ -21,12 +21,12 @@ namespace CalendR\Event;
 class Event extends AbstractEvent
 {
     /**
-     * @var \DateTime
+     * @var \DateTimeInterface
      */
     protected $begin;
 
     /**
-     * @var \DateTime
+     * @var \DateTimeInterface
      */
     protected $end;
 
@@ -35,7 +35,7 @@ class Event extends AbstractEvent
      */
     protected $uid;
 
-    public function __construct($uid, \DateTime $start, \DateTime $end)
+    public function __construct($uid, \DateTimeInterface $start, \DateTimeInterface $end)
     {
         if ($start->diff($end)->invert == 1) {
             throw new \InvalidArgumentException('Events usually start before they end');
@@ -61,7 +61,7 @@ class Event extends AbstractEvent
     /**
      * Returns the event begin.
      *
-     * @return \DateTime event begin
+     * @return \DateTimeInterface event begin
      */
     public function getBegin()
     {
@@ -71,7 +71,7 @@ class Event extends AbstractEvent
     /**
      * Returns the event end.
      *
-     * @return \DateTime event end
+     * @return \DateTimeInterface event end
      */
     public function getEnd()
     {

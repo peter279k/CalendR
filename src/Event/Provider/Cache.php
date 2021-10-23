@@ -57,7 +57,7 @@ class Cache implements ProviderInterface
     /**
      * {@inheritdoc}
      */
-    public function getEvents(\DateTime $begin, \DateTime $end, array $options = array())
+    public function getEvents(\DateTimeInterface $begin, \DateTimeInterface $end, array $options = array())
     {
         $cacheKey = md5(serialize(array($begin, $end, $options)));
 

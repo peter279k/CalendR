@@ -29,7 +29,7 @@ class Basic implements ProviderInterface, \IteratorAggregate, \Countable
     /**
      * {@inheritdoc}
      */
-    public function getEvents(\DateTime $begin, \DateTime $end, array $options = array())
+    public function getEvents(\DateTimeInterface $begin, \DateTimeInterface $end, array $options = array())
     {
         $events = array();
         foreach ($this->events as $event) {

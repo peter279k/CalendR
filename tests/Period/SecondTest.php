@@ -10,9 +10,11 @@ use CalendR\Period\Day;
 use CalendR\Period\PeriodInterface;
 use CalendR\Period\Year;
 use PHPUnit\Framework\TestCase;
+use Prophecy\PhpUnit\ProphecyTrait;
 
 class SecondTest extends TestCase
 {
+    use ProphecyTrait;
 
     /**
      * Data Provider: Valid Constructor
