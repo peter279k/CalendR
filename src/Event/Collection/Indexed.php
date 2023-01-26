@@ -170,6 +170,7 @@ class Indexed implements CollectionInterface
     /**
      * {@inheritdoc}
      */
+    #[\ReturnTypeWillChange]
     public function count()
     {
         return $this->count;

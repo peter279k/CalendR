@@ -38,6 +38,7 @@ class Hour extends PeriodAbstract implements \Iterator
     /**
      * {@inheritdoc}
      */
+    #[\ReturnTypeWillChange]
     public function current()
     {
         return $this->current;
@@ -46,6 +47,7 @@ class Hour extends PeriodAbstract implements \Iterator
     /**
      * {@inheritdoc}
      */
+    #[\ReturnTypeWillChange]
     public function next()
     {
         if (null === $this->current) {
@@ -61,6 +63,7 @@ class Hour extends PeriodAbstract implements \Iterator
     /**
      * {@inheritdoc}
      */
+    #[\ReturnTypeWillChange]
     public function key()
     {
         return (int) $this->current->getBegin()->format('G');
@@ -69,6 +72,7 @@ class Hour extends PeriodAbstract implements \Iterator
     /**
      * {@inheritdoc}
      */
+    #[\ReturnTypeWillChange]
     public function valid()
     {
         return null !== $this->current;
@@ -77,6 +81,7 @@ class Hour extends PeriodAbstract implements \Iterator
     /**
      * {@inheritdoc}
      */
+    #[\ReturnTypeWillChange]
     public function rewind()
     {
         $this->current = null;
