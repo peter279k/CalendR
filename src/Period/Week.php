@@ -49,6 +49,7 @@ class Week extends PeriodAbstract implements \Iterator
     /**
      * {@inheritdoc}
      */
+    #[\ReturnTypeWillChange]
     public function current()
     {
         return $this->current;
@@ -57,6 +58,7 @@ class Week extends PeriodAbstract implements \Iterator
     /**
      * {@inheritdoc}
      */
+    #[\ReturnTypeWillChange]
     public function next()
     {
         if (!$this->valid()) {
@@ -72,6 +74,7 @@ class Week extends PeriodAbstract implements \Iterator
     /**
      * {@inheritdoc}
      */
+    #[\ReturnTypeWillChange]
     public function key()
     {
         return $this->current->getBegin()->format('d-m-Y');
@@ -80,6 +83,7 @@ class Week extends PeriodAbstract implements \Iterator
     /**
      * {@inheritdoc}
      */
+    #[\ReturnTypeWillChange]
     public function valid()
     {
         return null !== $this->current;
@@ -88,6 +92,7 @@ class Week extends PeriodAbstract implements \Iterator
     /**
      * {@inheritdoc}
      */
+    #[\ReturnTypeWillChange]
     public function rewind()
     {
         $this->current = null;

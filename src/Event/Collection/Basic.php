@@ -107,6 +107,7 @@ class Basic implements CollectionInterface
     /**
      * @return int
      */
+    #[\ReturnTypeWillChange]
     public function count()
     {
         return count($this->events);

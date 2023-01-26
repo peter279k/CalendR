@@ -82,6 +82,7 @@ class Month extends PeriodAbstract implements \Iterator
     /**
      * @return Week
      */
+    #[\ReturnTypeWillChange]
     public function current()
     {
         return $this->current;
@@ -90,6 +91,7 @@ class Month extends PeriodAbstract implements \Iterator
     /**
      * {@inheritdoc}
      */
+    #[\ReturnTypeWillChange]
     public function next()
     {
         if (!$this->valid()) {
@@ -106,6 +108,7 @@ class Month extends PeriodAbstract implements \Iterator
     /**
      * {@inheritdoc}
      */
+    #[\ReturnTypeWillChange]
     public function key()
     {
         return $this->current->getBegin()->format('W');
@@ -114,6 +117,7 @@ class Month extends PeriodAbstract implements \Iterator
     /**
      * {@inheritdoc}
      */
+    #[\ReturnTypeWillChange]
     public function valid()
     {
         return null !== $this->current();
@@ -122,6 +126,7 @@ class Month extends PeriodAbstract implements \Iterator
     /**
      * {@inheritdoc}
      */
+    #[\ReturnTypeWillChange]
     public function rewind()
     {
         $this->current = null;

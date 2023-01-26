@@ -37,6 +37,7 @@ class Year extends PeriodAbstract implements \Iterator
     /**
      * {@inheritdoc}
      */
+    #[\ReturnTypeWillChange]
     public function current()
     {
         return $this->current;
@@ -45,6 +46,7 @@ class Year extends PeriodAbstract implements \Iterator
     /**
      * {@inheritdoc}
      */
+    #[\ReturnTypeWillChange]
     public function next()
     {
         if (null === $this->current) {
@@ -60,6 +62,7 @@ class Year extends PeriodAbstract implements \Iterator
     /**
      * {@inheritdoc}
      */
+    #[\ReturnTypeWillChange]
     public function key()
     {
         return $this->current->getBegin()->format('m');
@@ -68,6 +71,7 @@ class Year extends PeriodAbstract implements \Iterator
     /**
      * {@inheritdoc}
      */
+    #[\ReturnTypeWillChange]
     public function valid()
     {
         return null !== $this->current;
@@ -76,6 +80,7 @@ class Year extends PeriodAbstract implements \Iterator
     /**
      * {@inheritdoc}
      */
+    #[\ReturnTypeWillChange]
     public function rewind()
     {
         $this->current = null;
