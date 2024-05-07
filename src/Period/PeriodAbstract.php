@@ -48,8 +48,8 @@ abstract class PeriodAbstract implements PeriodInterface
             throw $this->createInvalidException();
         }
 
-        $this->begin = clone $begin;
-        $this->end   = clone $begin;
+        $this->begin = \DateTime::createFromInterface($begin);
+        $this->end   = \DateTime::createFromInterface($begin);
         $this->end->add($this->getDateInterval());
     }
 
