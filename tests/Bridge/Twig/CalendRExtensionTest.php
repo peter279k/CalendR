@@ -8,6 +8,7 @@ use CalendR\Event\EventInterface;
 use CalendR\Period\PeriodInterface;
 use PHPUnit\Framework\MockObject\MockObject;
 use PHPUnit\Framework\TestCase;
+use Twig\TwigFunction;
 
 /**
  * @author Yohan Giarelli <yohan@giarel.li>
@@ -34,7 +35,7 @@ class CalendRExtensionTest extends TestCase
     {
 
         $functions = array_map(
-            function (\Twig_SimpleFunction $fn) { return $fn->getName(); },
+            function (TwigFunction $fn) { return $fn->getName(); },
             $this->object->getFunctions()
         );
 

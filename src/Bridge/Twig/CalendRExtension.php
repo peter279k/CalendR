@@ -3,13 +3,15 @@
 namespace CalendR\Bridge\Twig;
 
 use CalendR\Calendar;
+use Twig\Extension\AbstractExtension;
+use Twig\TwigFunction;
 
 /**
  * Extension for using periods and events from Twig
  *
  * @author Yohan Giarelli <yohan@giarel.li>
  */
-class CalendRExtension extends \Twig_Extension
+class CalendRExtension extends AbstractExtension
 {
     /**
      * @var Calendar
@@ -25,16 +27,16 @@ class CalendRExtension extends \Twig_Extension
     }
 
     /**
-     * @return array<\Twig_Function>
+     * @return array<\Twig\TwigFunction>
      */
     public function getFunctions()
     {
         return [
-            new \Twig_SimpleFunction('calendr_year', [$this, 'getYear']),
-            new \Twig_SimpleFunction('calendr_month', [$this, 'getMonth']),
-            new \Twig_SimpleFunction('calendr_week', [$this, 'getWeek']),
-            new \Twig_SimpleFunction('calendr_day', [$this, 'getDay']),
-            new \Twig_SimpleFunction('calendr_events', [$this, 'getEvents']),
+            new TwigFunction('calendr_year', [$this, 'getYear']),
+            new TwigFunction('calendr_month', [$this, 'getMonth']),
+            new TwigFunction('calendr_week', [$this, 'getWeek']),
+            new TwigFunction('calendr_day', [$this, 'getDay']),
+            new TwigFunction('calendr_events', [$this, 'getEvents']),
         ];
     }
 
